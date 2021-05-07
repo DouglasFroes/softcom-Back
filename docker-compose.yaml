@@ -1,0 +1,28 @@
+version: '3'
+
+services:
+  api:
+    container_name: api-node
+    build: .
+    # command: "yarn start"
+    ports:
+      - '3000:3000'
+    env_file: .env
+    environment:
+      POSTGRES_HOST: postgres
+    volumes:
+      - .:/home/node/api/
+      - /home/node/api/node_modules
+    depends_on:
+      - postgres
+
+  postgres:
+    container_name: postgres
+    image: postgres
+    restart: always
+    ports:
+      - '5432:5432'
+    environment:
+      POSTGRES_DB: postgres
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 123321
