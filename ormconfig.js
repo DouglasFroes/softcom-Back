@@ -5,11 +5,11 @@ module.exports = {
   // username: 'postgres',
   // password: '123321',
   // database: 'postgres',
-  url:process.env.DATABASE_URL,
+  url: process.env.DATABASE_URL,
   synchronize: false,
-  logging:false,
+  logging: false,
   entities: [process.env.ENTITIES],
-  migrations: [process.env.MIGEATIONS],
+  migrations: [process.env.MIGRATIONS],
   cli: {
     migrationsDir: './src/database/migrations'
   }

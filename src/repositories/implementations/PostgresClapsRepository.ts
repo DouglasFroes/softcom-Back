@@ -17,6 +17,8 @@ export class PostgresClapsRepository implements IClapsRepository {
   }
 
   async save(claps: Claps) {
+    if (claps.total >= 50) return claps
+
     claps.total += 1
     const clapsRepository = getRepository(Claps)
 
