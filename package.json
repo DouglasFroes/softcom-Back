@@ -8,7 +8,7 @@
     "build": "tsc",
     "start": "node ./dist/server.js",
     "dev": "ts-node-dev  --transpile-only  --ignore-watch node_modules   ./src/server.ts",
-    "typeorm": "npx  ./node_modules/typeorm/cli.js",
+    "typeorm": "ts-node-dev --transpile-only  ./node_modules/typeorm/cli.js",
     "test": "jest --config jest.config.ts --passWithNoTests --silent --noStackTrace --runInBand",
     "test:cov": "jest --config jest.config.ts --coverage",
     "test:watch": "jest --config jest.config.ts --watchAll"

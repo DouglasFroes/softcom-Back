@@ -10,7 +10,7 @@ services:
     environment:
       PORT: 3000
       ENTITIES: ./dist/entities/*.js
-      MIGEATIONS: ./dist/database/migrations/*.js
+      MIGRATIONS: ./dist/database/migrations/*.js
       DATABASE_URL: postgres://docker:so1234@postgres:5432/softcom
     volumes:
       - .:/home/node/api/
