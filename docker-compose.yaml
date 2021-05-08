@@ -4,18 +4,23 @@ services:
   api:
     container_name: api-node
     build: .
-    # command: "yarn start"
+    # command: " "
     ports:
       - '3000:3000'
-    env_file: .env
     environment:
-      POSTGRES_HOST: postgres
+      PORT: 3000
+      ENTITIES: ./dist/entities/*.js
+      MIGEATIONS: ./dist/database/migrations/*.js
+      DATABASE_URL: postgres://docker:so1234@postgres:5432/softcom
     volumes:
       - .:/home/node/api/
       - /home/node/api/node_modules
     depends_on:
       - postgres
+    links:
+      - postgres
 
+      
   postgres:
     container_name: postgres
     image: postgres
@@ -23,6 +28,15 @@ services:
     ports:
       - '5432:5432'
     environment:
-      POSTGRES_DB: postgres
-      POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: 123321
+      POSTGRES_DB: softcom
+      POSTGRES_USER: docker
+      POSTGRES_PASSWORD: so1234
+  
+
+
+
+
+
+
+
+      
