@@ -62,27 +62,27 @@ api on [http://localhost:3000](http://localhost:3000).
 
 ## Routes
 
-# get('/')
+### get('/')
 
 ```bash
   result json { api: 'on' }
 ```
 
-# post('/user')
+### post('/user')
 
 ```bash
   create user
   body requeste { name , email}
 ```
 
-# post('/article')
+### post('/article')
 
 ```bash
   create article
   body requeste { title, author, text}
 ```
 
-# post('/claps')
+### post('/claps')
 
 ```bash
   count claps
